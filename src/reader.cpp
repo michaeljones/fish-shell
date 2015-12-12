@@ -2833,7 +2833,7 @@ const wchar_t *reader_readline(int nchars) {
                     const editable_line_t *el = &data->command_line;
                     data->search_buff.append(el->text);
                     data->history_search = history_search_t(*data->history, data->search_buff,
-                                                            HISTORY_SEARCH_TYPE_CONTAINS);
+                                                            HISTORY_SEARCH_TYPE_PREFIX);
 
                     // Always skip history entries that exactly match what has been typed so far.
                     wcstring_list_t skip_list;
